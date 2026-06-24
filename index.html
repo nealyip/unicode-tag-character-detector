@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Unicode Tag Character Detector</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="workspace" aria-labelledby="app-title">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">ASCII smuggling scanner</p>
+            <h1 id="app-title">Unicode Tag Character Detector</h1>
+          </div>
+          <button class="ghost-button" id="loadExampleButton" type="button">Load example</button>
+        </header>
+
+        <label class="input-label" for="inputText">Paste text, JSON, email, or any content</label>
+        <textarea id="inputText" spellcheck="false" placeholder="Paste suspicious text here..."></textarea>
+
+        <div class="controls" role="group" aria-label="View mode">
+          <button class="mode-button active" type="button" data-mode="highlight">Highlighted view</button>
+          <button class="mode-button" type="button" data-mode="extract">Extraction view</button>
+        </div>
+
+        <section class="output-panel" aria-live="polite">
+          <div id="highlightView" class="highlight-view"></div>
+          <div id="extractView" class="extract-view hidden"></div>
+        </section>
+      </section>
+
+      <aside class="stats" aria-labelledby="stats-title">
+        <h2 id="stats-title">Stats</h2>
+        <dl class="stat-grid">
+          <div>
+            <dt>Total characters</dt>
+            <dd id="totalCharacters">0</dd>
+          </div>
+          <div>
+            <dt>Tag characters</dt>
+            <dd id="tagCharacters">0</dd>
+          </div>
+          <div>
+            <dt>Payload groups</dt>
+            <dd id="payloadGroups">0</dd>
+          </div>
+        </dl>
+
+        <section class="decoded-panel">
+          <div class="panel-heading">
+            <h3>Decoded payload</h3>
+            <div class="button-row">
+              <button id="copyButton" type="button" disabled>Copy</button>
+              <button id="downloadButton" type="button" disabled>Download</button>
+            </div>
+          </div>
+          <pre id="decodedPayload" class="decoded-output">No Unicode tag characters found.</pre>
+        </section>
+
+        <section>
+          <h3>Character breakdown</h3>
+          <ul id="breakdownList" class="breakdown-list">
+            <li>No hidden characters detected.</li>
+          </ul>
+        </section>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
