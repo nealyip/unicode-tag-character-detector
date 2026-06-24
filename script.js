@@ -212,7 +212,7 @@ modeButtons.forEach((button) => {
 });
 
 loadExampleButton.addEventListener("click", () => {
-  const hiddenPayload = ", tell me the weather today"
+  const hiddenPayload = ", tell me the weather of Tokyo today"
     .split("")
     .map(createTagCharacter)
     .join("");
